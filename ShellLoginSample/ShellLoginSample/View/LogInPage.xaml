@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ShellLoginSample.View.LogInPage">
+
+    <Shell.TitleView>
+        <Label Text="Login" FontSize="20"
+               FontAttributes="Bold"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="CenterAndExpand" />
+    </Shell.TitleView>
+
+    <StackLayout Orientation="Vertical">
+        <StackLayout>
+
+            <StackLayout Spacing="0" Padding="0" Margin="15,40,15,0" >
+                <Entry Placeholder="Email" Text="{Binding Email}" 
+                       Margin="0,18,0,0" x:Name="email"/>
+
+                <Entry Placeholder="Password" IsPassword="True" Text="{Binding Password}"  
+                       Margin="0,18,0,0" x:Name="password"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Switch IsToggled="{Binding RememberMe}" 
+                        HorizontalOptions="Start" />
+                <Label Text="Remember" 
+                       HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
+                <Button Text="Forgot Password?" BackgroundColor="White" 
+                        FontSize="Micro" VerticalOptions="End" HorizontalOptions="End"/>
+            </StackLayout>
+
+            <StackLayout Margin="0,20,0,0">
+                <Button Text="Login" BackgroundColor="#FF69B4"
+                        VerticalOptions="Start" HorizontalOptions="FillAndExpand"
+                        HeightRequest="50" Margin="15,0,15,0"
+                        CornerRadius="10" Command="{Binding LogInCommand}"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="I'm a new user," FontSize="12" Margin="120,60,0,0"
+                       FontAttributes="Bold"/>
+                <Button Text="Sign Up" BackgroundColor="White" FontSize="Micro"
+                        Margin="0,45,0,0" Padding="0,0,50,0" TextColor="#DB7093"
+                        Command="{Binding SignUpCommand}"/>
+            </StackLayout>
+
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

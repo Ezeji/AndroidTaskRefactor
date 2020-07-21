@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ShellLoginSample.View.SignUpPage">
+
+    <Shell.TitleView>
+        <Label Text="Create Account" FontSize="20"
+               FontAttributes="Bold"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="CenterAndExpand" />
+    </Shell.TitleView>
+
+    <StackLayout Orientation="Vertical">
+
+
+        <StackLayout Spacing="0" Padding="0" Margin="15,10,15,0" >
+            <Entry Placeholder="Username" x:Name="username" 
+                       Text="{Binding RegisterUser.Username}"/>
+            <Label x:Name="RegisterUser_UsernameError" 
+                       IsVisible="False" TextColor="Red" />
+
+            <Entry Placeholder="Email" x:Name="email" 
+                       Text="{Binding RegisterUser.Email}"/>
+            <Label x:Name="RegisterUser_EmailError" 
+                       IsVisible="False" TextColor="Red" />
+
+            <Entry Placeholder="Password" IsPassword="True" x:Name="password"
+                       Text="{Binding RegisterUser.Password}"/>
+            <Label x:Name="RegisterUser_PasswordError" 
+                       IsVisible="False" TextColor="Red" />
+
+            <Entry Placeholder="Phone number" x:Name="phonenumber"
+                       Text="{Binding RegisterUser.PhoneNumber}"/>
+            <Label x:Name="RegisterUser_PhoneNumberError" 
+                       IsVisible="False" TextColor="Red" />
+
+            <Entry Placeholder="ClientID" x:Name="clientid"
+                       Text="{Binding RegisterUser.ClientID}"/>
+            <Label x:Name="RegisterUser_ClientIDError" 
+                       IsVisible="False" TextColor="Red" />
+
+            <Entry Placeholder="Company" x:Name="company"
+                       Text="{Binding RegisterUser.Company}"/>
+            <Label x:Name="RegisterUser_CompanyError" 
+                       IsVisible="False" TextColor="Red" />
+        </StackLayout>
+
+        <StackLayout>
+            <Button Text="Signup" BackgroundColor="#FF69B4"
+                        VerticalOptions="Start" HorizontalOptions="FillAndExpand"
+                        Margin="15,0,15,0"
+                        CornerRadius="10" 
+                        Command="{Binding SignUpCommand}"/>
+        </StackLayout>
+
+
+
+
+    </StackLayout>
+
+</ContentPage>
